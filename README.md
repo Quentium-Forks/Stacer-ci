@@ -20,16 +20,16 @@
 		<img width="64px" src="https://149366088.v2.pressablecdn.com/wp-content/themes/omgubuntu-theme-2022_04_0/images/favicons/favicon-192x192.png"/>
 	</a>        
     <a href="https://diolinux.com.br/sistemas-operacionais/ubuntu/stacer-um-programa-para-otimizar-o-ubuntu.html">
-		<img width="64px" src="https://u5h3z3d7.stackpathcdn.com/wp-content/uploads/2021/05/diolinux-logo.png"/>
+		<img width="64px" src="https://diolinux.com.br/wp-content/uploads/2021/05/diolinux-logo.png"/>
 	</a>    
     <a href="https://www.dobreprogramy.pl/stacer-program-do-optymalizacji-ubuntu-ktory-wyglada-jakby-uciekl-z-windowsa,6628400543275137a">
-		<img width="64px" src="https://www.dobreprogramy.pl/icon.png"/>
+		<img width="64px" src="https://www.dobreprogramy.pl/resources/icons/icon.png"/>
 	</a>
     <a href="https://desdelinux.net/optimizar-debian-ubuntu-linux-mint-derivados-stacer/">
 		<img width="64px" src="https://blog.desdelinux.net/wp-content/uploads/2018/04/cropped-desdelinux.png"/>
 	</a>
 	<a href="https://www.techrepublic.com/article/how-to-install-stacer-for-quick-linux-system-optimization/">
-		<img width="64px" src="https://www.techrepublic.com/wp-content/themes/techrepublic/inc/images/app-icons/android-chrome-256x256.png"/>
+		<img width="64px" src="https://www.techrepublic.com/wp-content/themes/techrepublic-theme/inc/images/app-icons/android-chrome-256x256.png"/>
 	</a>
 </p>
 
@@ -75,26 +75,25 @@ Select the AUR helper of your choice:
 1. Run `pacaur -a stacer`
 2. Launch Stacer using the installed `stacer` command.
 
-## Build from source with CMake (Qt Version Qt 5.x)
+## Build from source (with CMake)
 
-Qt5 repo:
-
-1. Run `sudo add-apt-repository ppa:beineri/opt-qt-5.15.4-focal`
-2. Run `sudo apt-get update`
+1. Run `sudo apt-get update`
+2. Run for each dependency `sudo apt-get install <dependency>`
 
 Dependencies:
 
--   cmake
--   qt515base
--   qt515imageformats
--   qt515svg
--   qt515charts-no-lgpl
--   qt515tools
+- cmake
+- qt6-base-dev
+- qt6-tools-dev
+- qt6-charts-dev
+- qt6-svg-dev
+- qt6-wayland-dev (optional)
+- qt6-tools-dev-tools
 
 1. `mkdir build && cd build`
-2. `cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_PREFIX_PATH=/opt/qt515/ ..`
+2. `cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_CXX_COMPILER=g++ ..`
 3. `make -j $(nproc)`
-4. `output/bin/stacer`
+4. `./output/stacer`
 
 ## Screenshots
 
