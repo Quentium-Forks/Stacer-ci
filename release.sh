@@ -29,7 +29,7 @@ unset QTDIR
 unset QT_PLUGIN_PATH
 unset LD_LIBRARY_PATH
 
-./linuxdeployqt-continuous-x86_64.AppImage release/$DIR/stacer/stacer -bundle-non-qt-libs -no-translations -no-strip -unsupported-allow-new-glibc -appimage
+./linuxdeployqt-continuous-x86_64.AppImage release/$DIR/stacer/stacer -bundle-non-qt-libs -no-translations -unsupported-allow-new-glibc -appimage
 mv Stacer-*.AppImage release/Stacer-$VERSION-x86_64.AppImage
 
 rm linuxdeployqt-continuous-x86_64.AppImage
