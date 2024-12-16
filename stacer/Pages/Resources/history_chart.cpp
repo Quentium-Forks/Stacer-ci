@@ -42,15 +42,8 @@ void HistoryChart::init()
 
     mChartView->setRenderHint(QPainter::Antialiasing);
 
-    QList<int> colors = {
-        0x2ecc71, 0xe74c3c, 0x3498db, 0xf1c40f, 0xe67e22,
-        0x1abc9c, 0x9b59b6, 0x34495e, 0xd35400, 0xc0392b,
-        0x8e44ad, 0xFF8F00, 0xEF6C00, 0x4E342E, 0x424242,
-        0x5499C7, 0x58D68D, 0xCD6155, 0xF5B041, 0x566573
-    };
-    // set colors
     for (int i = 0; i < mSeriesList.count(); ++i) {
-        dynamic_cast<QSplineSeries*>(mChart->series().at(i))->setColor(QColor(colors.at(i)));
+        dynamic_cast<QSplineSeries*>(mChart->series().at(i))->setColor(QColor::fromHsvF((qreal)i/mSeriesList.count(), 0.8, 0.8));
     }
 
     // Chart Settings
