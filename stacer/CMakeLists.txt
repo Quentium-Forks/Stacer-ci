@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.5 FATAL_ERROR)
+cmake_minimum_required(VERSION 3.10 FATAL_ERROR)
 project(stacer)
 
 set(MANAGERS_DIR  "${CMAKE_CURRENT_SOURCE_DIR}/Managers")
