@@ -1,5 +1,5 @@
 #!/bin/bash
-VERSION=1.3.0
+VERSION=1.3.1
 DIR=stacer-$VERSION
 export VERSION=$VERSION
 
