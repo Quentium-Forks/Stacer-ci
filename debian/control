@@ -2,14 +2,18 @@ Source: stacer
 Section: utils
 Priority: optional
 Maintainer: Quentin Lienhardt <pro@quentium.fr>
-Build-Depends: debhelper (>= 12)
-Standards-Version: 4.6.2
-Homepage: https://github.com/QuentiumYT/Stacer
+Build-Depends: debhelper (>= 12), cmake, qt6-base-dev, qt6-tools-dev, qt6-charts-dev, qt6-svg-dev, qt6-tools-dev-tools
+Standards-Version: 4.7.0
+Rules-Requires-Root: no
 Vcs-Browser: https://github.com/QuentiumYT/Stacer
 Vcs-Git: https://github.com/QuentiumYT/Stacer.git
+Homepage: https://stacer.quentium.fr/
 
 Package: stacer
 Architecture: all
 Depends: ${misc:Depends}
 Recommends: systemd, curl
-Description: Linux System Optimizer and Monitoring
+Description: Linux system optimizer and monitoring
+ Monitor your system (CPU, memory, disk) in a graphical application (qt).
+ Change and monitor your services. Summarizes basic system information and
+ can show network download/upload speeds/totals.
