@@ -1265,7 +1265,7 @@
     <message>
         <location filename="../stacer/Pages/StartupApps/startup_app_edit.ui" line="44"/>
         <source>Fields cannot be left blank.</source>
-        <translation>Необходимо заполнить по</translation>
+        <translation>Необходимо заполнить поля.</translation>
     </message>
     <message>
         <location filename="../stacer/Pages/StartupApps/startup_app_edit.ui" line="58"/>
