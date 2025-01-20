@@ -221,7 +221,7 @@
     <message>
         <location filename="../stacer/Pages/GnomeSettings/appearance_settings.ui" line="44"/>
         <source>Screen Applications</source>
-        <translation>Applications d&apos;écran</translation>
+        <translation>Applications d’écran</translation>
     </message>
     <message>
         <location filename="../stacer/Pages/GnomeSettings/appearance_settings.ui" line="74"/>
@@ -1775,7 +1775,7 @@
     <message>
         <location filename="../stacer/Pages/GnomeSettings/window_manager_settings.cpp" line="81"/>
         <source>None</source>
-        <translation>Auucn</translation>
+        <translation>Aucun</translation>
     </message>
     <message>
         <location filename="../stacer/Pages/GnomeSettings/window_manager_settings.cpp" line="81"/>
