@@ -201,9 +201,14 @@ QList<QStandardItem*> ProcessesPage::createRow(const Process &proc)
 
 void ProcessesPage::on_txtProcessSearch_textChanged(const QString &val)
 {
-    QRegularExpression query(QRegularExpression::wildcardToRegularExpression(val), QRegularExpression::CaseInsensitiveOption);
-    mSortFilterModel->setFilterKeyColumn(mHeaders.count() - 1); // process name
-    mSortFilterModel->setFilterRegularExpression(query);
+    QString cleanVal = val;
+    cleanVal.replace("*", ".*");
+
+    QRegularExpression query(cleanVal, QRegularExpression::CaseInsensitiveOption);
+    if (query.isValid()) {
+        mSortFilterModel->setFilterKeyColumn(mHeaders.count() - 1); // process name
+        mSortFilterModel->setFilterRegularExpression(query);
+    }
 }
 
 void ProcessesPage::on_sliderRefresh_valueChanged(const int &i)
