@@ -24,6 +24,7 @@ jobs:
           host: linux
           target: desktop
           arch: gcc_64
+          archives: qtbase qtsvg
           modules: qtcharts
       - name: Install libraries
         run: |
@@ -38,4 +39,6 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: stacer-${{ matrix.os }}
-          path: ${{ github.workspace }}/release/stacer_*.deb
+          path: |
+            ${{ github.workspace }}/release/stacer_*.deb
+            ${{ github.workspace }}/release/Stacer-*.AppImage
