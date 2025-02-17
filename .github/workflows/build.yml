@@ -9,7 +9,7 @@ jobs:
     name: Build App
     strategy:
       matrix:
-        os: [ubuntu-24.04, ubuntu-22.04]
+        os: [ubuntu-24.04]
     runs-on: ${{ matrix.os }}
     steps:
       - name: Checkout
@@ -24,7 +24,7 @@ jobs:
           host: linux
           target: desktop
           arch: gcc_64
-          archives: qtbase qttools qtqml qtqmlcore qtsvg qtlinguist qttranslations qtwayland
+          archives: qtbase qttools qtuitools qtqml qtqmlcore qtsvg qtlinguist qttranslations qtwayland
           modules: qtcharts
       - name: Install libraries
         run: |
