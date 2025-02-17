@@ -37,7 +37,7 @@ jobs:
       - name: Upload workflow artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: stacer
+          name: stacer-${{ matrix.os }}.deb
           path: |
             ${{ github.workspace }}/release/stacer_*.deb
             ${{ github.workspace }}/release/Stacer-*.AppImage
