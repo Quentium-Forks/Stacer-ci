@@ -24,7 +24,7 @@ jobs:
           host: linux
           target: desktop
           arch: gcc_64
-          archives: qtbase qtsvg
+          archives: qtbase qttools qtsvg qtlinguist qtwayland
           modules: qtcharts
       - name: Install libraries
         run: |
