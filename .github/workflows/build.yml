@@ -10,6 +10,13 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-24.04, ubuntu-22.04, ubuntu-20.04]
+        include:
+          - os: ubuntu-24.04
+            codename: "noble"
+          - os: ubuntu-22.04
+            codename: "jammy"
+          - os: ubuntu-20.04
+            codename: "focal"
     runs-on: ${{ matrix.os }}
     steps:
       - name: Checkout
@@ -41,3 +48,15 @@ jobs:
           path: |
             ${{ github.workspace }}/release/stacer_*.deb
             ${{ github.workspace }}/release/Stacer-*.AppImage
+
+      - name: Publish PPA package
+        uses: twyleg/github_action_publish_ppa_package@v2 # yuezk/publish-ppa-package@v2 # atareao/publish-ppa-package-from-source@v1
+        with:
+          ppa_package: "stacer"
+          ppa_repository: "quentiumyt/stacer"
+          deb_email: "pro@quentium.fr"
+          deb_fullname: "Quentin Lienhardt"
+          gpg_private_key: ${{ secrets.PPA_GPG_PRIVATE_KEY }}
+          gpg_passphrase: ${{ secrets.PPA_GPG_PASSPHRASE }}
+          upstream_version: ${{ github.event.release.tag_name }}
+          series: ${{ matrix.codename }}
