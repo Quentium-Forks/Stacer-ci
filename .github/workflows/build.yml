@@ -3,8 +3,6 @@ name: Build Stacer Application
 on:
   workflow_dispatch:
   push:
-    tags:
-      - "v*"
 
 jobs:
   build:
@@ -55,3 +53,15 @@ jobs:
           path: |
             ${{ github.workspace }}/release/stacer_*.deb
             ${{ github.workspace }}/release/Stacer-*.AppImage
+
+      - name: Publish PPA package
+        uses: yuezk/publish-ppa-package@main
+        with:
+          tarball: ${{ github.workspace }}/release/stacer_*.orig.tar.xz
+          debian_dir: ${{ github.workspace }}/debian/
+          repository: "quentiumyt/stacer"
+          deb_email: "pro@quentium.fr"
+          deb_fullname: "Quentin Lienhardt"
+          gpg_private_key: ${{ secrets.PPA_GPG_PRIVATE_KEY }}
+          gpg_passphrase: ${{ secrets.PPA_GPG_PASSPHRASE }}
+          series: ${{ matrix.codename }}
