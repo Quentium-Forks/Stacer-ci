@@ -56,6 +56,7 @@ jobs:
 
       - name: Publish PPA package
         uses: yuezk/publish-ppa-package@main
+        if: matrix.codename == 'noble'
         with:
           tarball: ${{ github.workspace }}/release/stacer_*.orig.tar.xz
           debian_dir: ${{ github.workspace }}/debian/
@@ -64,4 +65,6 @@ jobs:
           deb_fullname: "Quentin Lienhardt"
           gpg_private_key: ${{ secrets.PPA_GPG_PRIVATE_KEY }}
           gpg_passphrase: ${{ secrets.PPA_GPG_PASSPHRASE }}
-          series: ${{ matrix.codename }}
+          # flatten matrix codenames to a single string
+          series: "noble jammy focal"
+          new_version_template: "{VERSION}-{REVISION}"
