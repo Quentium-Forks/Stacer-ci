@@ -68,3 +68,4 @@ jobs:
           # flatten matrix codenames to a single string
           series: "noble jammy focal"
           new_version_template: "{VERSION}-3"
+          always_upload_upstream_tarball: true
