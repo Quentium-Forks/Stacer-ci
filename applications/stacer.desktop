@@ -5,4 +5,4 @@ Comment=Linux System Optimizer and Monitoring
 Icon=stacer
 Type=Application
 Terminal=false
-Categories=Utility;
+Categories=Utility;System;Monitor;
